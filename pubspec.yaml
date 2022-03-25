@@ -1,7 +1,7 @@
 name: native_ios_dialog
-description: Minimalistic plugin to show native iOS Dialogs
+description: A Flutter plugin which makes it straightforward to show the native equivalent of a CupertinoAlertDialog or CupertinoActionSheet.
 version: 0.0.1
-homepage:
+repository: https://github.com/Gebes/native_ios_dialog
 
 environment:
   sdk: ">=2.16.1 <3.0.0"

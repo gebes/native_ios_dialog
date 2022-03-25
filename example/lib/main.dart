@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final NativeIosDialogStyle style = currentDialogStyle == 0 ? NativeIosDialogStyle.alert : NativeIosDialogStyle.actionSheet;
+    final NativeIosDialogStyle style = currentDialogStyle == 0
+        ? NativeIosDialogStyle.alert
+        : NativeIosDialogStyle.actionSheet;
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: Text("Native iOS Dialogs"),
@@ -43,18 +45,37 @@ class _HomePageState extends State<HomePage> {
           SimpleButton(
             text: "Info Dialog",
             onPressed: () {
-              NativeIosDialog(title: "Info", message: "Please consider the following information in this dialog.", style: style, actions: [
-                NativeIosDialogButton(text: "OK", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: () {}),
-              ]).show();
+              NativeIosDialog(
+                  title: "Info",
+                  message:
+                      "Please consider the following information in this dialog.",
+                  style: style,
+                  actions: [
+                    NativeIosDialogButton(
+                        text: "OK",
+                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        onPressed: () {}),
+                  ]).show();
             },
           ),
           SimpleButton(
             text: "Confirm Dialog",
             onPressed: () {
-              NativeIosDialog(title: "Confirm", message: "Please confirm the following information in this dialog.", style: style, actions: [
-                NativeIosDialogButton(text: "OK", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: () {}),
-                NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
-              ]).show();
+              NativeIosDialog(
+                  title: "Confirm",
+                  message:
+                      "Please confirm the following information in this dialog.",
+                  style: style,
+                  actions: [
+                    NativeIosDialogButton(
+                        text: "OK",
+                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
+                  ]).show();
             },
           ),
           SimpleButton(
@@ -62,11 +83,18 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               NativeIosDialog(
                   title: "Confirm deletion",
-                  message: "Do you want to delete this resource? You cannot undo this action.",
+                  message:
+                      "Do you want to delete this resource? You cannot undo this action.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(text: "Delete", style: NativeIosDialogButtonStyle.destructive, onPressed: () {}),
-                    NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Delete",
+                        style: NativeIosDialogButtonStyle.destructive,
+                        onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
                   ]).show();
             },
           ),
@@ -75,12 +103,22 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               NativeIosDialog(
                   title: "Are you sure?",
-                  message: "Do you want to apply the changes you made, or do you want to delete this resource?",
+                  message:
+                      "Do you want to apply the changes you made, or do you want to delete this resource?",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(text: "Apply", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: () {}),
-                    NativeIosDialogButton(text: "Delete", style: NativeIosDialogButtonStyle.destructive, onPressed: () {}),
-                    NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Apply",
+                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Delete",
+                        style: NativeIosDialogButtonStyle.destructive,
+                        onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
                   ]).show();
             },
           ),
@@ -94,8 +132,13 @@ class _HomePageState extends State<HomePage> {
                       "Please confirm the following information in this dialog.\n\nOh wait!\nSeems like there is something that prohibits you from confirming this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(text: "OK", style: NativeIosDialogButtonStyle.defaultStyle),
-                    NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "OK",
+                        style: NativeIosDialogButtonStyle.defaultStyle),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
                   ]).show();
             },
           ),
@@ -108,8 +151,13 @@ class _HomePageState extends State<HomePage> {
                       "Do you want to delete this resource? You cannot undo this action.\n\nOh wait!\nSeems like there is something that prohibits you from confirming this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(text: "Delete", style: NativeIosDialogButtonStyle.destructive),
-                    NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Delete",
+                        style: NativeIosDialogButtonStyle.destructive),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
                   ]).show();
             },
           ),
@@ -118,12 +166,20 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               NativeIosDialog(
                   title: "Are you sure?",
-                  message: "Do you want to apply the changes you made, or do you want to delete this resource?",
+                  message:
+                      "Do you want to apply the changes you made, or do you want to delete this resource?",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(text: "Apply", style: NativeIosDialogButtonStyle.defaultStyle),
-                    NativeIosDialogButton(text: "Delete", style: NativeIosDialogButtonStyle.destructive),
-                    NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Apply",
+                        style: NativeIosDialogButtonStyle.defaultStyle),
+                    NativeIosDialogButton(
+                        text: "Delete",
+                        style: NativeIosDialogButtonStyle.destructive),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
                   ]).show();
             },
           ),
@@ -131,10 +187,22 @@ class _HomePageState extends State<HomePage> {
           SimpleButton(
             text: "100 Buttons",
             onPressed: () {
-              NativeIosDialog(title: "Uhm...", message: "Please do not use this in production... please do not do this! This dialog is just a demonstration of how iOS handles many buttons.", style: style, actions: [
-                for (int i = 1; i <= 100; i++) NativeIosDialogButton(text: "Action $i", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: (){}),
-                NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
-              ]).show();
+              NativeIosDialog(
+                  title: "Uhm...",
+                  message:
+                      "Please do not use this in production... please do not do this! This dialog is just a demonstration of how iOS handles many buttons.",
+                  style: style,
+                  actions: [
+                    for (int i = 1; i <= 100; i++)
+                      NativeIosDialogButton(
+                          text: "Action $i",
+                          style: NativeIosDialogButtonStyle.defaultStyle,
+                          onPressed: () {}),
+                    NativeIosDialogButton(
+                        text: "Cancel",
+                        style: NativeIosDialogButtonStyle.cancel,
+                        onPressed: () {}),
+                  ]).show();
             },
           ),
           const SimpleDivider(text: "Configuration"),
@@ -160,7 +228,8 @@ class SimpleButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const SimpleButton({Key? key, required this.text, required this.onPressed}) : super(key: key);
+  const SimpleButton({Key? key, required this.text, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +256,8 @@ class SimpleDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+      child:
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         const Expanded(
             child: Divider(
           color: Colors.black,

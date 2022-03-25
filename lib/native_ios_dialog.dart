@@ -16,7 +16,8 @@ class NativeIosDialogButton {
   /// If this callback is null, then the button is disabled
   final VoidCallback? onPressed;
 
-  NativeIosDialogButton({required this.text, required this.style, this.onPressed});
+  NativeIosDialogButton(
+      {required this.text, required this.style, this.onPressed});
 
   /// Get whetever the button is enabled or not
   bool get enabled => onPressed != null;
@@ -66,7 +67,11 @@ class NativeIosDialog {
   /// The same also applies when all actions are disabled (`onPressed` is null)
   final List<NativeIosDialogButton> actions;
 
-  NativeIosDialog({required this.title, required this.message, this.style = NativeIosDialogStyle.alert, required this.actions});
+  NativeIosDialog(
+      {required this.title,
+      required this.message,
+      this.style = NativeIosDialogStyle.alert,
+      required this.actions});
 
   /// Shows the native iOS Dialog and calls the specific `onPressed` handler
   ///

@@ -8,7 +8,7 @@ To use this plugin, add `native_ios_dialog` as a dependency in your pubspec.yaml
 Dialogs itself in Flutter are pretty awesome. However, the [CupertinoAlertDialogs](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html) do not provide the same feeling as native iOS dialogs, so I created this plugin.
 With this plugin, you have all the customization options iOS provides.
 
-### Types of alerts
+### Types of dialogs
 * Alert 
 * Action Sheet
 <p float="left">

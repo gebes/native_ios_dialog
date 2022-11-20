@@ -68,8 +68,8 @@ public class SwiftNativeIosDialogPlugin: NSObject, FlutterPlugin {
 
     private func showDialog(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
         let args = call.arguments as! NSDictionary
-        let title = args.value(forKey: "title") as! String
-        let message = args.value(forKey: "message") as! String
+        let title = args.value(forKey: "title") as? String ?? nil
+        let message = args.value(forKey: "message") as? String ?? nil
         let style = args.value(forKey: "style") as! Int
 
         let alertStyle = indexToAlertStyle(style)
@@ -99,34 +99,11 @@ public class SwiftNativeIosDialogPlugin: NSObject, FlutterPlugin {
 
         }
 
-
-        /*
-        let confirmAction = UIAlertAction(title: confirmButton, style: indexToStyle(confirmButtonStyle)) { _ in
-            result(true)
-        }
-        alert.addAction(confirmAction)
-        if showCancelButton {
-            let cancelAction = UIAlertAction(title: cancelButton, style: indexToStyle(cancelButtonStyle)) { _ in
-                result(false)
-            }
-            alert.addAction(cancelAction)
-            let test = UIAlertAction(title: "lol a button", style: indexToStyle(cancelButtonStyle)) { _ in
-                result(false)
-            }
-            alert.addAction(test)
-        }
-        // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Remind Me Tomorrow", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Launch the Missile", style: .destructive, handler: nil))
-        */
         guard let controller = controller else {
             result(unavailableError)
             return
         }
         controller.present(alert, animated: true)
-
-
     }
 
 }

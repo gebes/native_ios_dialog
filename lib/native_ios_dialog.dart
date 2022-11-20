@@ -54,10 +54,10 @@ class NativeIosDialog {
   static const MethodChannel _channel = MethodChannel('native_ios_dialog');
 
   /// Title of the dialog
-  final String title;
+  final String? title;
 
   /// Main content of the dialog
-  final String message;
+  final String? message;
 
   /// Style of the dialog, which determines if it is the native equivalent to a [CupertinoAlertDialog](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html) or [CupertinoActionSheet](https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html)
   final NativeIosDialogStyle style;
@@ -68,8 +68,8 @@ class NativeIosDialog {
   final List<NativeIosDialogButton> actions;
 
   NativeIosDialog(
-      {required this.title,
-      required this.message,
+      { this.title,
+       this.message,
       this.style = NativeIosDialogStyle.alert,
       required this.actions});
 

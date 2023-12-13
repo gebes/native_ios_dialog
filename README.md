@@ -33,14 +33,14 @@ Each button can also be disabled
 #### Info dialog
 ```dart 
 NativeIosDialog(title: "Info", message: "Please consider the following information in this dialog.", style: style, actions: [
-  NativeIosDialogButton(text: "OK", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: () {}),
+  NativeIosDialogAction(text: "OK", style: NativeIosDialogActionStyle.defaultStyle, onPressed: () {}),
 ]).show();
 ```
 
 #### Confirm dialog
 ```dart
 NativeIosDialog(title: "Confirm", message: "Please confirm the following information in this dialog.", style: style, actions: [
-  NativeIosDialogButton(text: "OK", style: NativeIosDialogButtonStyle.defaultStyle, onPressed: () {}),
-  NativeIosDialogButton(text: "Cancel", style: NativeIosDialogButtonStyle.cancel, onPressed: () {}),
+  NativeIosDialogAction(text: "OK", style: NativeIosDialogActionStyle.defaultStyle, onPressed: () {}),
+  NativeIosDialogAction(text: "Cancel", style: NativeIosDialogActionStyle.cancel, onPressed: () {}),
 ]).show();
 ```

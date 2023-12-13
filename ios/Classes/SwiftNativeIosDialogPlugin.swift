@@ -10,7 +10,7 @@ public class SwiftNativeIosDialogPlugin: NSObject, FlutterPlugin {
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
-        case "showDialog":
+        case "showDialogIos":
             let exception = tryBlock {
                 self.showDialog(call, result)
             }
@@ -72,11 +72,18 @@ public class SwiftNativeIosDialogPlugin: NSObject, FlutterPlugin {
         let message = args.value(forKey: "message") as? String ?? nil
         let style = args.value(forKey: "style") as! Int
 
-        let alertStyle = indexToAlertStyle(style)
+        var alertStyle = indexToAlertStyle(style)
         if alertStyle == nil {
             result(invalidStyleError)
             return
         }
+
+        // Check if the device is an iPad and the style is .actionSheet
+        // .actionSheet is not supported on iPadOS since 13.2
+        if UIDevice.current.userInterfaceIdiom == .pad && alertStyle == .actionSheet {
+            alertStyle = .alert
+        }
+
         let alert = UIAlertController(title: title, message: message, preferredStyle: alertStyle!)
 
         let actions = args.value(forKey: "actions") as! [NSDictionary]
@@ -85,7 +92,7 @@ public class SwiftNativeIosDialogPlugin: NSObject, FlutterPlugin {
             let title = action.value(forKey: "text") as! String
             let enabled = action.value(forKey: "enabled") as! Bool
 
-            let actionStyle = indexToActionStyle(action.value(forKey: "style") as! Int)
+            var actionStyle = indexToActionStyle(action.value(forKey: "style") as! Int)
             if actionStyle == nil {
                 result(invalidStyleError)
                 return

@@ -51,9 +51,9 @@ class _HomePageState extends State<HomePage> {
                       "Please consider the following information in this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "OK",
-                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        style: NativeIosDialogActionStyle.defaultStyle,
                         onPressed: () {}),
                   ]).show();
             },
@@ -67,13 +67,13 @@ class _HomePageState extends State<HomePage> {
                       "Please confirm the following information in this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "OK",
-                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        style: NativeIosDialogActionStyle.defaultStyle,
                         onPressed: () {}),
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -87,13 +87,13 @@ class _HomePageState extends State<HomePage> {
                       "Do you want to delete this resource? You cannot undo this action.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Delete",
-                        style: NativeIosDialogButtonStyle.destructive,
+                        style: NativeIosDialogActionStyle.destructive,
                         onPressed: () {}),
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -107,17 +107,17 @@ class _HomePageState extends State<HomePage> {
                       "Do you want to apply the changes you made, or do you want to delete this resource?",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Apply",
-                        style: NativeIosDialogButtonStyle.defaultStyle,
+                        style: NativeIosDialogActionStyle.defaultStyle,
                         onPressed: () {}),
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Delete",
-                        style: NativeIosDialogButtonStyle.destructive,
+                        style: NativeIosDialogActionStyle.destructive,
                         onPressed: () {}),
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -132,12 +132,12 @@ class _HomePageState extends State<HomePage> {
                       "Please confirm the following information in this dialog.\n\nOh wait!\nSeems like there is something that prohibits you from confirming this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "OK",
-                        style: NativeIosDialogButtonStyle.defaultStyle),
-                    NativeIosDialogButton(
+                        style: NativeIosDialogActionStyle.defaultStyle),
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -151,12 +151,12 @@ class _HomePageState extends State<HomePage> {
                       "Do you want to delete this resource? You cannot undo this action.\n\nOh wait!\nSeems like there is something that prohibits you from confirming this dialog.",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Delete",
-                        style: NativeIosDialogButtonStyle.destructive),
-                    NativeIosDialogButton(
+                        style: NativeIosDialogActionStyle.destructive),
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -170,15 +170,15 @@ class _HomePageState extends State<HomePage> {
                       "Do you want to apply the changes you made, or do you want to delete this resource?",
                   style: style,
                   actions: [
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Apply",
-                        style: NativeIosDialogButtonStyle.defaultStyle),
-                    NativeIosDialogButton(
+                        style: NativeIosDialogActionStyle.defaultStyle),
+                    NativeIosDialogAction(
                         text: "Delete",
-                        style: NativeIosDialogButtonStyle.destructive),
-                    NativeIosDialogButton(
+                        style: NativeIosDialogActionStyle.destructive),
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },
@@ -194,13 +194,13 @@ class _HomePageState extends State<HomePage> {
                   style: style,
                   actions: [
                     for (int i = 1; i <= 100; i++)
-                      NativeIosDialogButton(
+                      NativeIosDialogAction(
                           text: "Action $i",
-                          style: NativeIosDialogButtonStyle.defaultStyle,
+                          style: NativeIosDialogActionStyle.defaultStyle,
                           onPressed: () {}),
-                    NativeIosDialogButton(
+                    NativeIosDialogAction(
                         text: "Cancel",
-                        style: NativeIosDialogButtonStyle.cancel,
+                        style: NativeIosDialogActionStyle.cancel,
                         onPressed: () {}),
                   ]).show();
             },

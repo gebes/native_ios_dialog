@@ -1,25 +1,25 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:native_ios_dialog/exception.dart';
 
 /// DTO for a UIAlertAction
-class NativeIosDialogButton {
-  /// Text of the button which is displayed
+class NativeIosDialogAction {
+  /// Text of the action which is displayed
   final String text;
 
-  /// Style of the buttonj
-  final NativeIosDialogButtonStyle style;
+  /// Style of the action
+  final NativeIosDialogActionStyle style;
 
-  /// Callback when the user clicks the button
-  /// If this callback is null, then the button is disabled
+  /// Callback when the user clicks the action
+  /// If this callback is null, then the action is disabled
   final VoidCallback? onPressed;
 
-  NativeIosDialogButton(
+  NativeIosDialogAction(
       {required this.text, required this.style, this.onPressed});
 
-  /// Get whetever the button is enabled or not
+  /// Get if the action is enabled or not
   bool get enabled => onPressed != null;
 
   Map<dynamic, dynamic> toJson() {
@@ -39,8 +39,8 @@ enum NativeIosDialogStyle {
 }
 
 /// Enum mapping for the [UIAlertAction.Style](https://developer.apple.com/documentation/uikit/uialertaction/style)
-enum NativeIosDialogButtonStyle {
-  /// Apply the default style to the action’s button.
+enum NativeIosDialogActionStyle {
+  /// Apply the default style to the action’s action.
   defaultStyle,
 
   /// Apply a style that indicates the action cancels the operation and leaves things unchanged.
@@ -65,13 +65,9 @@ class NativeIosDialog {
   /// List of actions that the dialog has.
   /// Please note that if there is no action, the user cannot close the dialog unless he closes the whole app.
   /// The same also applies when all actions are disabled (`onPressed` is null)
-  final List<NativeIosDialogButton> actions;
+  final List<NativeIosDialogAction> actions;
 
-  NativeIosDialog(
-      { this.title,
-       this.message,
-      this.style = NativeIosDialogStyle.alert,
-      required this.actions});
+  NativeIosDialog({this.title, this.message, this.style = NativeIosDialogStyle.alert, required this.actions});
 
   /// Shows the native iOS Dialog and calls the specific `onPressed` handler
   ///
@@ -81,7 +77,7 @@ class NativeIosDialog {
       throw WrongPlatformException("Platform needs to be iOS");
     }
 
-    final result = await _channel.invokeMethod<int>("showDialog", {
+    final result = await _channel.invokeMethod<int>("showDialogIos", {
           "title": title,
           "message": message,
           "style": style.index,
@@ -95,9 +91,3 @@ class NativeIosDialog {
   }
 }
 
-/// This exception is thrown, when `.show()` is called on a different platform
-class WrongPlatformException implements Exception {
-  String cause;
-
-  WrongPlatformException(this.cause);
-}

@@ -1,3 +1,8 @@
+## 0.2.0
+
+* macOS Support with NativeMacosDialog
+* Renamed Native iOS Buttons to Actions
+
 ## 0.1.0
 
 * Made title and message optional
